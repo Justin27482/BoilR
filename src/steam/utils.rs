@@ -128,13 +128,14 @@ pub fn get_default_location() -> Result<String, Box<dyn Error + Sync + Send>> {
     #[cfg(target_os = "linux")]
     let path_string = {
         let home = std::env::var("HOME")?;
-        String::from(
-            Path::new(&home)
+        let default_path = Path::new(&home)
                 .join(".steam")
-                .join("steam")
-                .to_str()
-                .unwrap_or(""),
-        )
+                .join("steam");
+            if default_path.exists(){
+                default_path.to_string_lossy().to_string()
+            }else{
+                Path::new(&home).join(".var").join("app").join("com.valvesoftware.Steam").join(".steam").join("steam").to_string_lossy().to_string()
+            }
     };
     #[cfg(target_os = "macos")]
     let path_string = {
@@ -200,7 +201,14 @@ pub fn get_users_images(user: &SteamUsersInfo) -> Result<Vec<String>, Box<dyn Er
     let user_folders = std::fs::read_dir(&grid_folder)?;
     let file_names = user_folders
         .filter_map(|image| image.ok())
-        .map(|image| image.file_name().to_string_lossy().to_string())
+        .map(|image| {
+            image
+                .path()
+                .file_stem()
+                .unwrap_or_default()
+                .to_string_lossy()
+                .to_string()
+        })
         .collect();
     Ok(file_names)
 }

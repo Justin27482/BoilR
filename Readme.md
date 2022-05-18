@@ -8,12 +8,20 @@ It uses the Steam 3rd party shortcuts feature and does not require you to set up
 The goal is that you do not have to leave your Steam library to launch games from other launchers/stores, so that you can find all the games that you have available.
 Optionally you can set BoilR up to automatically download artwork from [SteamGridDB](https://www.steamgriddb.com/).
 
+## Getting started
+- Download the latest release from the [releases page](https://github.com/PhilipK/BoilR/releases).
+- Run the executable.
+- Click Import Games.
+- Restart Steam to see your new shortcuts.
+
+If you are on Linux (or a Steam Deck) you can install BoilR from [flathub](https://flathub.org/apps/details/io.github.philipk.boilr).
+
 ## Index
 - [BoilR](#boilr)
+  - [Getting started](#getting-started)
   - [Index](#index)
   - [Features](#features)
   - [Integrations](#integrations)
-  - [Getting started](#getting-started)
   - [Getting cover art for your shortcuts](#getting-cover-art-for-your-shortcuts)
   - [Tips](#tips)
     - [Tips for steam deck](#tips-for-steam-deck)
@@ -52,15 +60,6 @@ Optionally you can set BoilR up to automatically download artwork from [SteamGri
 - [x] [Heroic Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher) (Linux Only)
 - [x] [Amazon Games](https://gaming.amazon.com) (Windows Only)
 - [ ] XBox/Microsoft Store integration
-
-
-
-## Getting started
-
-- Download the latest release from the [releases page](https://github.com/PhilipK/BoilR/releases).
-- Run the executable.
-- Click Import Games.
-- Restart Steam to see your new shortcuts.
 
 
 ## Getting cover art for your shortcuts
